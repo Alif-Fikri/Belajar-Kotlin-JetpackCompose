@@ -19,6 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.collectAsState
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import com.example.belajarjetpackcompose.material.AppRoutes
 import com.example.belajarjetpackcompose.viewmodel.CounterViewModel
 
 @Composable
@@ -97,4 +100,8 @@ fun MyStateExampleLayoutWithViewModel(counterViewModel: CounterViewModel = andro
 @Composable
 fun StateExampleLayoutPreview() {
     MyStateExampleLayout()
+}
+
+fun NavGraphBuilder.stateExampleGraph() {
+    composable(AppRoutes.STATE_EXAMPLE) { MyStateExampleLayoutWithViewModel() }
 }

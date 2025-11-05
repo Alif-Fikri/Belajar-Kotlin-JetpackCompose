@@ -3,13 +3,17 @@ package com.example.belajarjetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.belajarjetpackcompose.formlogin.MyLoginScreenWithViewModel
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import com.example.belajarjetpackcompose.navigation.AppNavHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyLoginScreenWithViewModel()
+            Surface(color = MaterialTheme.colorScheme.background) {
+                AppNavHost()
+            }
         }
     }
 }

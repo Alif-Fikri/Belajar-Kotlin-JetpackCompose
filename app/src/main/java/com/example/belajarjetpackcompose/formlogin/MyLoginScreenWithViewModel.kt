@@ -4,6 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import com.example.belajarjetpackcompose.material.AppRoutes
 
 @Composable
 fun MyLoginScreenWithViewModel(
@@ -20,4 +23,8 @@ fun MyLoginScreenWithViewModel(
         onPasswordChange = viewModel::onPasswordChange,
         onSubmit = viewModel::login
     )
+}
+
+fun NavGraphBuilder.formLoginGraph() {
+    composable(AppRoutes.LOGIN) { MyLoginScreenWithViewModel() }
 }
